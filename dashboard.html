@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard - LifeLink</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+    body{
+      margin:0;
+      background:#0f0f0f;
+      color:white;
+      font-family:Poppins,sans-serif;
+      padding:40px;
+    }
+
+    h1{
+      text-align:center;
+      color:#ff3b3b;
+      margin-bottom:40px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#1a1a1a;
+      padding:40px;
+      border-radius:25px;
+      text-align:center;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card h2{
+      color:#ff3b3b;
+      margin-bottom:15px;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>❤️ LifeLink Dashboard</h1>
+
+  <div class="grid">
+
+    <a href="donors.html">
+
+      <div class="card">
+
+        <h2>🩸 Blood Donors</h2>
+
+        <p>
+          Search nearby blood donors quickly.
+        </p>
+
+      </div>
+
+    </a>
+
+    <a href="emergency.html">
+
+      <div class="card">
+
+        <h2>🚨 Emergency Help</h2>
+
+        <p>
+          Send emergency alerts instantly.
+        </p>
+
+      </div>
+
+    </a>
+
+    <a href="hospitals.html">
+
+  <div class="card">
+
+    <h2>🏥 Hospitals</h2>
+
+    <p>
+      View nearby hospitals and support centers.
+    </p>
+
+  </div>
+
+</a>
+  </div>
+
+</body>
+</html>
