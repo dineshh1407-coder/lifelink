@@ -150,7 +150,21 @@
       document.getElementById("requests")
       .innerHTML += requestCard;
 
-      alert("Emergency Alert Sent ❤️");
+      let emergencyMessage = `
+
+🚨 EMERGENCY ALERT ACTIVATED
+
+Your emergency request has been successfully sent to nearby volunteers and medical supporters.
+
+Our LifeLink network is now searching for immediate assistance near your location.
+
+Please stay available on your phone for response updates.
+
+❤️ LifeLink Emergency Support
+
+`;
+
+alert(emergencyMessage);
 
     }
 
