@@ -110,6 +110,11 @@
   </div>
 
   <div id="requests"></div>
+  <h2 style="margin-top:40px;color:#ff3b3b;">
+  Blood Requests
+</h2>
+
+<div id="bloodRequests"></div>
 
   <script>
 
@@ -150,7 +155,7 @@
       document.getElementById("requests")
       .innerHTML += requestCard;
 
-      let emergencyMessage = `
+    let emergencyMessage = `
 
 🚨 EMERGENCY ALERT ACTIVATED
 
@@ -167,6 +172,33 @@ Please stay available on your phone for response updates.
 alert(emergencyMessage);
 
     }
+    let bloodRequests =
+JSON.parse(localStorage.getItem("requests")) || [];
+
+let requestContainer =
+document.getElementById("bloodRequests");
+
+bloodRequests.forEach(function(req){
+
+  requestContainer.innerHTML += `
+
+  <div class="request-card">
+
+    <h2>🩸 ${req.blood} Blood Needed</h2>
+
+    <p><strong>Donor:</strong> ${req.donor}</p>
+
+    <p><strong>Patient:</strong> ${req.patient}</p>
+
+    <p><strong>Hospital:</strong> ${req.hospital}</p>
+
+    <p><strong>Phone:</strong> ${req.phone}</p>
+
+  </div>
+
+  `;
+
+});
 
   </script>
 
