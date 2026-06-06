@@ -145,13 +145,12 @@ function displayDonors(data){
 
         <p>📞 ${donor.phone}</p>
 
-        <button class="request-btn"
-        onclick="requestBlood()">
+      <button class="request-btn"
+onclick="requestBlood('${donor.name}','${donor.blood}')">
 
-          Request Blood
+  Request Blood
 
-        </button>
-
+</button>
       </div>
 
     `;
@@ -180,12 +179,65 @@ function filterDonors(){
   }
 
 }
+function requestBlood(name,blood){
 
-function requestBlood(){
+  let patientName =
+  prompt("Enter Patient Name");
 
-  alert("Blood Request Sent ❤️");
+  if(!patientName) return;
+
+  let hospital =
+  prompt("Enter Hospital Name");
+
+  if(!hospital) return;
+
+  let phone =
+  prompt("Enter Phone Number");
+
+  if(!phone) return;
+
+  let message = `
+
+🩸 EMERGENCY BLOOD REQUEST
+
+Donor Name: ${name}
+Blood Group: ${blood}
+
+Patient Name: ${patientName}
+
+Hospital: ${hospital}
+
+Contact: ${phone}
+
+Please respond immediately and help save a life ❤️
+
+`;
+
+  alert(message);
+
+  let requests =
+  JSON.parse(localStorage.getItem("requests")) || [];
+
+  requests.push({
+
+    donor:name,
+    blood:blood,
+    patient:patientName,
+    hospital:hospital,
+    phone:phone,
+    message:message
+
+  });
+
+  localStorage.setItem(
+    "requests",
+    JSON.stringify(requests)
+  );
+
+  alert("Blood Request Sent Successfully ❤️");
 
 }
+
 
 function clearDonors(){
 
