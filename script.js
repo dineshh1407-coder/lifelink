@@ -61,6 +61,11 @@ function registerDonor(){
   }
 
 }
+function requestBlood(){
+
+  alert("Blood Request Sent ❤️");
+
+}
 
 </script>
 function clearDonors(){
