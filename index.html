@@ -133,18 +133,14 @@
   <section class="stats">
 
     <div class="stat-box">
-      <h1>500+</h1>
-      <p>Donors</p>
+      <h1 id="donorCount">0</h1>
+<p>Donors</p>
     </div>
 
+    
     <div class="stat-box">
-      <h1>120+</h1>
-      <p>Lives Saved</p>
-    </div>
-
-    <div class="stat-box">
-      <h1>80+</h1>
-      <p>Emergency Requests</p>
+      <h1 id="emergencyCount">0</h1>
+<p>emergency request</p>
     </div>
 
   </section>
@@ -160,6 +156,16 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+
+let donors =
+JSON.parse(localStorage.getItem("donors")) || [];
+
+document.getElementById("donorCount")
+.innerText = donors.length + "+";
+
+</script>
 
 </body>
 </html>
