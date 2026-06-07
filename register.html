@@ -133,20 +133,6 @@ function registerDonor(){
 
   }
 
-  let donors =
-  JSON.parse(localStorage.getItem("donors")) || [];
-
-  let exists =
-  donors.find(d => d.phone === phone);
-
-  if(exists){
-
-    alert("Donor already registered ❤️");
-
-    return;
-
-  }
-
   let donor = {
 
     name:name,
@@ -155,10 +141,27 @@ function registerDonor(){
     location:location
 
   };
-localStorage.setItem(
-  "currentUser",
-  JSON.stringify(donor)
-);
+
+  // SAVE CURRENT USER PROFILE
+  localStorage.setItem(
+    "currentUser",
+    JSON.stringify(donor)
+  );
+
+  let donors =
+  JSON.parse(localStorage.getItem("donors")) || [];
+
+  let alreadyExists =
+  donors.some(d => d.phone === phone);
+
+  if(alreadyExists){
+
+    alert("Donor already registered ❤️");
+
+    return;
+
+  }
+
   donors.push(donor);
 
   localStorage.setItem(
@@ -169,7 +172,7 @@ localStorage.setItem(
   alert("Registration Successful ❤️");
 
   window.location.href =
-  "donors.html";
+  "dashboard.html";
 
 }
 
