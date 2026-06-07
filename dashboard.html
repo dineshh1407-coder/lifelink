@@ -120,26 +120,45 @@
   </div>
 <script>
 
-let currentUser =
-JSON.parse(localStorage.getItem("currentUser"));
+window.onload = function(){
 
-if(currentUser){
+  let currentUser =
+  JSON.parse(localStorage.getItem("currentUser"));
 
-  document.getElementById("profileName")
-  .innerHTML =
-  "👤 Name: " + currentUser.name;
+  if(currentUser){
 
-  document.getElementById("profileBlood")
-  .innerHTML =
-  "🩸 Blood Group: " + currentUser.blood;
+    document.getElementById("profileName")
+    .innerText =
+    "👤 Name: " + currentUser.name;
 
-  document.getElementById("profilePhone")
-  .innerHTML =
-  "📞 Phone: " + currentUser.phone;
+    document.getElementById("profileBlood")
+    .innerText =
+    "🩸 Blood Group: " + currentUser.blood;
 
-  document.getElementById("profileLocation")
-  .innerHTML =
-  "📍 Location: " + currentUser.location;
+    document.getElementById("profilePhone")
+    .innerText =
+    "📞 Phone: " + currentUser.phone;
+
+    document.getElementById("profileLocation")
+    .innerText =
+    "📍 Location: " + currentUser.location;
+
+  }else{
+
+    document.querySelector(".profile-card")
+    .innerHTML = `
+
+      <h2 style="color:red;">
+        No Profile Found
+      </h2>
+
+      <p>
+        Please register first ❤️
+      </p>
+
+    `;
+
+  }
 
 }
 
