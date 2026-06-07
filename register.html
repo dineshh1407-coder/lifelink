@@ -155,7 +155,10 @@ function registerDonor(){
     location:location
 
   };
-
+localStorage.setItem(
+  "currentUser",
+  JSON.stringify(donor)
+);
   donors.push(donor);
 
   localStorage.setItem(
